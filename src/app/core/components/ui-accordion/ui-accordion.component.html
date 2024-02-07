@@ -1,0 +1,219 @@
+<!-- Hero Start -->
+<section class="bg-half-170 bg-light d-table w-100" id="home">
+    <div class="container">
+        <div class="row mt-5 justify-content-center">
+            <div class="col-lg-12 text-center">
+                <div class="pages-heading">
+                    <h4 class="title mb-0"> Accordions </h4>
+                </div>
+            </div> <!--end col-->
+        </div><!--end row-->
+
+        <div class="position-breadcrumb">
+            <nav aria-label="breadcrumb" class="d-inline-block">
+                <ul class="breadcrumb rounded shadow mb-0 px-4 py-2">
+                    <li class="breadcrumb-item"><a routerLink="/index">Landrick</a></li>
+                    <li class="breadcrumb-item"><a href="javascript:void(0)">Components</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Accordions</li>
+                </ul>
+            </nav>
+        </div>
+    </div> <!--end container-->
+</section><!--end section-->
+<!-- Hero End -->
+
+<!-- Shape Start -->
+<div class="position-relative">
+    <div class="shape overflow-hidden text-color-white">
+        <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 48H1437.5H2880V0H2160C1442.5 52 720 0 720 0H0V48Z" fill="currentColor"></path>
+        </svg>
+    </div>
+</div>
+<!--Shape End-->
+
+<section class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-4 d-md-block d-none">
+                <app-component-sidebar></app-component-sidebar>
+            </div>
+
+            <div class="col-lg-9 col-md-8 col-12">
+                <div class="row">
+                    <!-- Accordions Start -->
+                    <div class="col-12">
+                        <div class="component-wrapper rounded shadow">
+                            <div class="p-4 border-bottom">
+                                <h5 class="title mb-0">Accordions</h5>
+                            </div>
+
+                            <div class="p-4">
+                                <h6 class="text-muted mb-2 pb-2">Ex.
+                                    <pre><code class="text-danger">
+&lt;div ngbAccordion activeIds=&quot;div ngbAccordionItem-0&quot; closeOthers=&quot;true&quot;&gt;
+&lt;div ngbAccordionItem id=&quot;div ngbAccordionItem-0&quot;
+    cardClass=&quot;border-0 rounded shadow mb-2&quot;&gt;
+    &lt;h2 ngbAccordionHeader&gt;
+        &lt;div class=&quot;border-0 bg-light&quot; id=&quot;headingone&quot;&gt;
+            &lt;button ngbAccordionButton class=&quot;title mb-0&quot;&gt; How does it work ?
+            &lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/h2&gt;
+    &lt;div ngbAccordionCollapse&gt;
+        &lt;div ngbAccordionBody&gt;
+            &lt;ng-template class=&quot;text-muted mb-0 faq-ans&quot;&gt;There are many variations
+                of passages of Lorem Ipsum available, but
+                the majority have suffered alteration in some form.
+            &lt;/ng-template&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div ngbAccordionItem cardClass=&quot;border-0 rounded shadow mb-2&quot;&gt;
+    &lt;h2 ngbAccordionHeader&gt;
+        &lt;div class=&quot;border-0 bg-light&quot; id=&quot;headingtwo&quot;&gt;
+            &lt;button ngbAccordionButton class=&quot;title mb-0&quot;&gt; Do I need a designer to
+                use Landrick ? &lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/h2&gt;
+    &lt;div ngbAccordionCollapse&gt;
+        &lt;div ngbAccordionBody&gt;
+            &lt;ng-template class=&quot;text-muted mb-0 faq-ans&quot;&gt;There are many variations
+                of passages of
+                Lorem Ipsum available, but
+                the majority have suffered alteration in some form.
+            &lt;/ng-template&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div ngbAccordionItem cardClass=&quot;border-0 rounded shadow mb-2&quot;&gt;
+    &lt;h2 ngbAccordionHeader&gt;
+        &lt;div class=&quot;border-0 bg-light&quot; id=&quot;headingthree&quot;&gt;
+            &lt;button ngbAccordionButton class=&quot;title mb-0&quot;&gt; What do I
+                need to
+                do to start selling ? &lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/h2&gt;
+    &lt;div ngbAccordionCollapse&gt;
+        &lt;div ngbAccordionBody&gt;
+            &lt;ng-template class=&quot;text-muted mb-0 faq-ans&quot;&gt;There are many
+                variations of passages of
+                Lorem Ipsum available, but
+                the majority have suffered alteration in some form.
+            &lt;/ng-template&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div ngbAccordionItem cardClass=&quot;border-0 rounded shadow mb-2&quot;&gt;
+    &lt;h2 ngbAccordionHeader&gt;
+        &lt;div class=&quot;border-0 bg-light&quot; id=&quot;headingthree&quot;&gt;
+            &lt;button ngbAccordionButton class=&quot;title mb-0&quot;&gt; What happens
+                when
+                I receive an order ? &lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/h2&gt;
+    &lt;div ngbAccordionCollapse&gt;
+        &lt;div ngbAccordionBody&gt;
+            &lt;ng-template class=&quot;text-muted mb-0 faq-ans&quot;&gt; There are many
+                variations of passages of
+                Lorem Ipsum available, but
+                the majority have suffered alteration in some form.
+            &lt;/ng-template&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+                                </h6>
+
+
+                                <div ngbAccordion activeIds="div ngbAccordionItem-0" closeOthers="true">
+                                    <div ngbAccordionItem id="div ngbAccordionItem-0"
+                                        cardClass="border-0 rounded shadow mb-2">
+                                        <h2 ngbAccordionHeader>
+                                            <div class="border-0 bg-light" id="headingone">
+                                                <button ngbAccordionButton class="title mb-0"> How does it work ?
+                                                </button>
+                                            </div>
+                                        </h2>
+                                        <div ngbAccordionCollapse>
+                                            <div ngbAccordionBody>
+                                                <ng-template class="text-muted mb-0 faq-ans">There are many variations
+                                                    of passages of Lorem Ipsum available, but
+                                                    the majority have suffered alteration in some form.
+                                                </ng-template>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div ngbAccordionItem cardClass="border-0 rounded shadow mb-2">
+                                        <h2 ngbAccordionHeader>
+                                            <div class="border-0 bg-light" id="headingtwo">
+                                                <button ngbAccordionButton class="title mb-0"> Do I need a designer to
+                                                    use Landrick ? </button>
+                                            </div>
+                                        </h2>
+                                        <div ngbAccordionCollapse>
+                                            <div ngbAccordionBody>
+                                                <ng-template class="text-muted mb-0 faq-ans">There are many variations
+                                                    of passages of
+                                                    Lorem Ipsum available, but
+                                                    the majority have suffered alteration in some form.
+                                                </ng-template>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div ngbAccordionItem cardClass="border-0 rounded shadow mb-2">
+                                        <h2 ngbAccordionHeader>
+                                            <div class="border-0 bg-light" id="headingthree">
+                                                <button ngbAccordionButton class="title mb-0"> What do I
+                                                    need to
+                                                    do to start selling ? </button>
+                                            </div>
+                                        </h2>
+                                        <div ngbAccordionCollapse>
+                                            <div ngbAccordionBody>
+                                                <ng-template class="text-muted mb-0 faq-ans">There are many
+                                                    variations of passages of
+                                                    Lorem Ipsum available, but
+                                                    the majority have suffered alteration in some form.
+                                                </ng-template>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div ngbAccordionItem cardClass="border-0 rounded shadow mb-2">
+                                        <h2 ngbAccordionHeader>
+                                            <div class="border-0 bg-light" id="headingthree">
+                                                <button ngbAccordionButton class="title mb-0"> What happens
+                                                    when
+                                                    I receive an order ? </button>
+                                            </div>
+                                        </h2>
+                                        <div ngbAccordionCollapse>
+                                            <div ngbAccordionBody>
+                                                <ng-template class="text-muted mb-0 faq-ans"> There are many
+                                                    variations of passages of
+                                                    Lorem Ipsum available, but
+                                                    the majority have suffered alteration in some form.
+                                                </ng-template>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--end col-->
+                                <!-- Accordions End -->
+                            </div>
+                            <!--end row-->
+                        </div>
+                        <!--end col-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Back to top -->
+<a href="javascript: void(0);" class="btn btn-icon btn-primary back-to-top" id="back-to-top" [ngxScrollTo]="'#home'">
+    <i-feather name="arrow-up" class="icons"></i-feather>
+</a>
+<!-- Back to top -->
