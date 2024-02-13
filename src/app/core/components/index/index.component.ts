@@ -1,6 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+interface form {
+  title: string,
+  content: string,
+  post: string,
+  topic: number,
+  comments: number,
+};
 
 @Component({
   selector: 'app-index',
@@ -13,8 +19,6 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
  */
 export class IndexComponent implements OnInit {
 
-  developmentForm!: UntypedFormGroup;
-  submitted = false;
   // Set Topbar Option
   Menuoption = 'center';
   Settingicon = true;
@@ -46,32 +50,103 @@ export class IndexComponent implements OnInit {
     },
     nav: false
   };
+  num: number = 0;
 
-  constructor(private formBuilder: UntypedFormBuilder) { }
+  option = {
+    startVal: this.num,
+    useEasing: true,
+    duration: 2,
+    decimalPlaces: 2,
+  };
+  blogData = [
+    {
+      image: "assets/images/blog/01.jpg",
+      title: "Design your apps in your own way",
+      like: "33",
+      message: "08",
+      name: "Calvin Carlo",
+      date: "13th August, 2019"
+    },
+    {
+      image: "assets/images/blog/02.jpg",
+      title: "How apps is changing the IT world",
+      like: "33",
+      message: "08",
+      name: "Calvin Carlo",
+      date: "13th August, 2019"
+    },
+    {
+      image: "assets/images/blog/03.jpg",
+      title: "Smartest Applications for Business",
+      like: "33",
+      message: "08",
+      name: "Calvin Carlo",
+      date: "13th August, 2019"
+    }
+  ];
+  formData: form[] = [
+    {
+      title: "Introductions: Landrick",
+      content: "Start working with Landrick that can provide everything you need to generate awareness, drive traffic, connect.",
+      post: "Calvin",
+      topic: 3,
+      comments: 5
+    },
+    {
+      title: "Web Designing and Developing",
+      content: "Start working with Landrick that can provide everything you need to generate awareness, drive traffic, connect.",
+      post: "George",
+      topic: 3,
+      comments: 5
+    },
+    {
+      title: "Hosting and providers",
+      content: "Start working with Landrick that can provide everything you need to generate awareness, drive traffic, connect.",
+      post: "Parthiv",
+      topic: 3,
+      comments: 5
+    },
+    {
+      title: "SEO starter guide",
+      content: "Start working with Landrick that can provide everything you need to generate awareness, drive traffic, connect.",
+      post: "David",
+      topic: 3,
+      comments: 5
+    },
+    {
+      title: "Troubleshooting and managing issues",
+      content: "Start working with Landrick that can provide everything you need to generate awareness, drive traffic, connect.",
+      post: "Tiger",
+      topic: 3,
+      comments: 5
+    },
+    {
+      title: "Backup and restore",
+      content: "Start working with Landrick that can provide everything you need to generate awareness, drive traffic, connect.",
+      post: "Cristina",
+      topic: 3,
+      comments: 5
+    },
+    {
+      title: "Errors and how to fix them",
+      content: "Start working with Landrick that can provide everything you need to generate awareness, drive traffic, connect.",
+      post: "Miriam",
+      topic: 3,
+      comments: 5
+    },
+    {
+      title: "Template features & Services",
+      content: "Start working with Landrick that can provide everything you need to generate awareness, drive traffic, connect.",
+      post: "Janalia",
+      topic: 3,
+      comments: 5
+    }
+  ];
+  constructor() { }
 
   ngOnInit(): void {
-    /**
-     * Form Validatyion
-     */
-    this.developmentForm = this.formBuilder.group({
-      name: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.required],
-    });
+ 
   }
 
-  // convenience getter for easy access to form fields
-  get form() { return this.developmentForm.controls; }
-
-  /**
-   * On submit form
-   */
-  onSubmit() {
-    this.submitted = true;
-    // stop here if form is invalid
-    if (this.developmentForm.invalid) {
-      return;
-    }
-  }
 
 }

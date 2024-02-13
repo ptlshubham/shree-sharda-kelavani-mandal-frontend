@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { IndexOnlineLearningComponent } from './core/components/index-online-learning/index-online-learning.component';
 import { IndexComponent } from './core/components/index/index.component';
 import { EmailAlertComponent } from './email/email-alert/email-alert.component';
 import { EmailConfirmationComponent } from './email/email-confirmation/email-confirmation.component';
@@ -8,6 +7,16 @@ import { EmailInvoiceComponent } from './email/email-invoice/email-invoice.compo
 import { EmailPasswordResetComponent } from './email/email-password-reset/email-password-reset.component';
 import { SwitcherComponent } from './shared/switcher/switcher.component';
 import { MasterPageComponent } from './core/components/master-page/master-page.component';
+import { AboutUsComponent } from './core/components/about-us/about-us.component';
+import { ManagementComponent } from './core/components/management/management.component';
+import { AcademicComponent } from './core/components/academic/academic.component';
+import { ContactUsComponent } from './core/components/contact-us/contact-us.component';
+import { BlogsComponent } from './core/components/blogs/blogs.component';
+import { PrivacyPolicyComponent } from './core/components/privacy-policy/privacy-policy.component';
+import { NewsComponent } from './core/components/news/news.component';
+import { FacilitiesComponent } from './core/components/facilities/facilities.component';
+import { AlumniComponent } from './core/components/alumni/alumni.component';
+import { GalleryComponent } from './core/components/gallery/gallery.component';
 
 const routes: Routes = [
   {
@@ -16,7 +25,16 @@ const routes: Routes = [
     children: [
       { path: '', component: IndexComponent },
       { path: 'index', component: IndexComponent },
-      { path: 'index-online-learning', component: IndexOnlineLearningComponent },
+      { path: 'about-us', component: AboutUsComponent },
+      { path: 'management', component: ManagementComponent },
+      { path: 'academic', component: AcademicComponent },
+      { path: 'contact-us', component: ContactUsComponent },
+      { path: 'privacy-policy', component: PrivacyPolicyComponent },
+      { path: 'blog', component: BlogsComponent },
+      { path: 'news', component: NewsComponent },
+      { path: 'facilities', component: FacilitiesComponent },
+      { path: 'alumni', component: AlumniComponent },
+      { path: 'gallery', component: GalleryComponent },
       
     ]
   },

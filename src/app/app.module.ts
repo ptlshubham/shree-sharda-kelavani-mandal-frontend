@@ -36,9 +36,18 @@ import { allIcons } from 'angular-feather/icons';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { SwitcherComponent } from './shared/switcher/switcher.component';
-import { IndexOnlineLearningComponent } from './core/components/index-online-learning/index-online-learning.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MasterPageComponent } from './core/components/master-page/master-page.component';
+import { AboutUsComponent } from './core/components/about-us/about-us.component';
+import { ManagementComponent } from './core/components/management/management.component';
+import { AcademicComponent } from './core/components/academic/academic.component';
+import { ContactUsComponent } from './core/components/contact-us/contact-us.component';
+import { BlogsComponent } from './core/components/blogs/blogs.component';
+import { PrivacyPolicyComponent } from './core/components/privacy-policy/privacy-policy.component';
+import { NewsComponent } from './core/components/news/news.component';
+import { FacilitiesComponent } from './core/components/facilities/facilities.component';
+import { GalleryComponent } from './core/components/gallery/gallery.component';
+import { AlumniComponent } from './core/components/alumni/alumni.component';
 
 
 @NgModule({
@@ -52,8 +61,17 @@ import { MasterPageComponent } from './core/components/master-page/master-page.c
     EmailPasswordResetComponent,
     MasterPageComponent,
     IndexComponent,
-    IndexOnlineLearningComponent,
+    AboutUsComponent,
     SwitcherComponent,
+    ManagementComponent,
+    AcademicComponent,
+    ContactUsComponent,
+    BlogsComponent,
+    PrivacyPolicyComponent,
+    NewsComponent,
+    FacilitiesComponent,
+    GalleryComponent,
+    AlumniComponent,
   ],
   imports: [
     BrowserModule,

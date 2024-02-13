@@ -240,92 +240,6 @@
         <li class="list-inline-item mb-0">
           <a href="javascript:void(0)" class="btn btn-icon btn-primary"><i class="uil uil-github icons"></i></a>
         </li>
-        <!-- <li class="list-inline-item mb-0 pe-1">
-          <a href="javascript:void(0)" class="btn btn-icon btn-soft-primary"><i class="mdi mdi-stack-overflow mdi-18px icons"></i></a>
-        </li>
-        <li class="list-inline-item mb-0">
-          <a href="javascript:void(0)" class="btn btn-icon btn-soft-primary" (click)="developerModal(content)"
-            data-bs-toggle="modal" data-bs-target="#loginform"><i class="uil uil-user icons"></i></a>
-        </li> -->
-        <ng-template #content let-modal>
-          <div class="modal-lg modal-dialog-centered" role="document">
-            <div class="modal-content rounded shadow-lg border-0 overflow-hidden position-relative">
-              <button type="button" class="btn-close position-absolute top-0 end-0 mt-2 me-2"
-                (click)="modal.dismiss('Cross click')" style="z-index: 1" data-bs-dismiss="modal"
-                aria-label="Close"></button>
-              <div class="modal-body p-0">
-                <div class="container-fluid px-0">
-                  <div class="row align-items-center g-0">
-                    <div class="col-lg-6 col-md-5">
-                      <img src="assets/images/course/online/ab02.jpg" class="img-fluid" alt="">
-                    </div>
-                    <!--end col-->
-
-                    <div class="col-lg-6 col-md-7">
-                      <form class="login-form p-4">
-                        <div class="row">
-                          <div class="col-lg-12">
-                            <div class="mb-3">
-                              <label class="form-label">Your Email <span class="text-danger">*</span></label>
-                              <div class="form-icon position-relative">
-                                <i-feather name="user" class="fea icon-sm icons"></i-feather>
-                                <input type="email" class="form-control ps-5" placeholder="Email" name="email"
-                                  required="">
-                              </div>
-                            </div>
-                          </div>
-                          <!--end col-->
-
-                          <div class="col-lg-12">
-                            <div class="mb-3">
-                              <label class="form-label">Password <span class="text-danger">*</span></label>
-                              <div class="form-icon position-relative">
-                                <i-feather name="key" class="fea icon-sm icons"></i-feather>
-                                <input type="password" class="form-control ps-5" placeholder="Password" required="">
-                              </div>
-                            </div>
-                          </div>
-                          <!--end col-->
-
-                          <div class="col-lg-12">
-                            <div class="d-flex justify-content-between">
-                              <div class="mb-3">
-                                <div class="custom-control custom-checkbox">
-                                  <input type="checkbox" class="custom-control-input" id="customCheck1">
-                                  <label class="custom-control-label ms-1" for="customCheck1">Remember me</label>
-                                </div>
-                              </div>
-                              <p class="forgot-pass mb-0"><a routerLink="/auth-re-password"
-                                  class="text-dark fw-bold">Forgot password ?</a></p>
-                            </div>
-                          </div>
-                          <!--end col-->
-
-                          <div class="col-lg-12 mb-0">
-                            <div class="d-grid">
-                              <button class="btn btn-primary">Sign in</button>
-                            </div>
-                          </div>
-                          <!--end col-->
-
-                          <div class="col-12 text-center">
-                            <p class="mb-0 mt-3"><small class="text-dark me-2">Don't have an account ?</small> <a
-                                routerLink="/auth-signup" class="text-dark fw-bold">Sign Up</a></p>
-                          </div>
-                          <!--end col-->
-                        </div>
-                        <!--end row-->
-                      </form>
-                    </div>
-                    <!--end col-->
-                  </div>
-                  <!--end row-->
-                </div>
-                <!--end container-->
-              </div>
-            </div>
-          </div>
-        </ng-template>
       </ul>
       }
 
@@ -428,26 +342,26 @@
         <li class="has-submenu">
           <a href="javascript:void(0)" (click)="onMenuClick($event)">About Us</a><span class="menu-arrow"></span>
           <ul class="submenu">
-            <li class="has-submenu"><a href="javascript:void(0)"> Our History</a> </li>
-            <li class="has-submenu"><a href="javascript:void(0)"> Management </a></li>
+            <li class="has-submenu"><a routerLink="/about-us"> Our History</a> </li>
+            <li class="has-submenu"><a routerLink="/management"> Management </a></li>
           </ul>
         </li>
         <li class="has-submenu">
-          <a href="javascript:void(0)" (click)="onMenuClick($event)">Academic</a><span class="menu-arrow"></span>
+          <a routerLink="javascript:void(0)" (click)="onMenuClick($event)">Academic</a><span class="menu-arrow"></span>
           <ul class="submenu">
-            <li class="has-submenu"><a href="javascript:void(0)"> English Medium</a> </li>
-            <li class="has-submenu"><a href="javascript:void(0)"> Gujrati Medium </a></li>
+            <li class="has-submenu"><a routerLink="/academic"> English Medium</a> </li>
+            <li class="has-submenu"><a routerLink="/academic"> Gujrati Medium </a></li>
           </ul>
         </li>
-        <li><a routerLink="/" class="nav-link-ref">Alumni</a></li>
-        <li><a routerLink="/" class="nav-link-ref">Gallery</a></li>
-        <li><a routerLink="/" class="nav-link-ref">Contact Us</a></li>
+        <li><a routerLink="/alumni" class="nav-link-ref">Alumni</a></li>
+        <li><a routerLink="/gallery" class="nav-link-ref">Gallery</a></li>
+        <li><a routerLink="/contact-us" class="nav-link-ref">Contact Us</a></li>
         <li class="has-submenu">
-          <a href="javascript:void(0)" (click)="onMenuClick($event)">More</a><span class="menu-arrow"></span>
+          <a routerLink="javascript:void(0)" (click)="onMenuClick($event)">More</a><span class="menu-arrow"></span>
           <ul class="submenu">
-            <li class="has-submenu"><a href="javascript:void(0)"> Facilities</a> </li>
-            <li class="has-submenu"><a href="javascript:void(0)"> Blogs</a></li>
-            <li class="has-submenu"><a href="javascript:void(0)"> News</a></li>
+            <li class="has-submenu"><a routerLink="/facilities"> Facilities</a> </li>
+            <li class="has-submenu"><a routerLink="/blog"> Blogs</a></li>
+            <li class="has-submenu"><a routerLink="/news"> News</a></li>
           </ul>
         </li>
 
