@@ -12,13 +12,13 @@ body * {
 
 .owl-theme .owl-dots .owl-dot.active span,
 .owl-theme .owl-dots.clickable .owl-dot:hover span {
-    background: #2f55d4 !important;
+    background: #29166e !important;
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
 }
 
 .owl-theme .owl-nav span {
-    background: #2f55d4 !important;
+    background: #29166e !important;
 }
 
 .accordion .card {

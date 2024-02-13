@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, TemplateRef } from "@angular/core";
 import { Router, NavigationEnd } from "@angular/router";
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import {NgbOffcanvas} from '@ng-bootstrap/ng-bootstrap';
+import { NgbOffcanvas } from '@ng-bootstrap/ng-bootstrap';
 
 
 @Component({
@@ -28,7 +28,10 @@ export class HeaderComponent implements OnInit {
   public href: string = "";
 
 
-  constructor(private router: Router, private modalService: NgbModal, private offcanvasService: NgbOffcanvas) {
+  constructor(
+    private router: Router,
+    private modalService: NgbModal,
+    private offcanvasService: NgbOffcanvas) {
     this.router.events.forEach((event) => {
       if (event instanceof NavigationEnd) {
         this._activateMenuDropdown();
@@ -41,41 +44,23 @@ export class HeaderComponent implements OnInit {
   ngAfterViewInit() {
     setTimeout(() => {
       this._activateMenuDropdown();
-          }, 0);
+    }, 0);
   }
 
   ngOnInit(): void {
     this.href = this.router.url;
-    if (this.router.url == '/index-classic-saas') {
-      var light_btn = document.querySelectorAll(".login-btn-primary")
-      light_btn.forEach(element => {
-        (element as HTMLElement).style.display = "none";
-      });
+    var light_btn = document.querySelectorAll(".login-btn-primary")
+    light_btn.forEach(element => {
+      (element as HTMLElement).style.display = "block";
+    });
 
-      var dark_btn = document.querySelectorAll(".login-btn-light")
-      dark_btn.forEach(element => {
-        (element as HTMLElement).style.display = "block";
-      });
-    }
-    else if (this.router.url == '/index-apps') {
-      document.querySelector('.app-header').classList.remove('d-none');
-    }
-    else {
-      var light_btn = document.querySelectorAll(".login-btn-primary")
-      light_btn.forEach(element => {
-        (element as HTMLElement).style.display = "block";
-      });
-
-      var dark_btn = document.querySelectorAll(".login-btn-light")
-      dark_btn.forEach(element => {
-        (element as HTMLElement).style.display = "none";
-      });
-      
-    }
-
+    var dark_btn = document.querySelectorAll(".login-btn-light")
+    dark_btn.forEach(element => {
+      (element as HTMLElement).style.display = "none";
+    });
     setTimeout(() => {
       this._activateMenuDropdown();
-          }, 0);
+    }, 0);
   }
 
   _activateMenuDropdown() {
@@ -165,7 +150,7 @@ export class HeaderComponent implements OnInit {
 
     } else {
       document.getElementById("topnav").classList.remove("nav-sticky");
-      }
+    }
     if (document.getElementById("back-to-top")) {
       if (
         document.body.scrollTop > 100 ||
@@ -216,7 +201,7 @@ export class HeaderComponent implements OnInit {
   }
 
   // Demo Offcanvas
-  openright(content: TemplateRef<any>) {  
+  openright(content: TemplateRef<any>) {
     this.offcanvasService.open(content, { position: 'end' });
   }
 
