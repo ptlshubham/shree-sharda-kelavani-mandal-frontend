@@ -30,23 +30,118 @@
 </div>
 <!--Shape End-->
 <!-- Start -->
-<section class="section mb-5">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-12 text-center">
-                <div class="section-title mb-4 pb-2">
-                    <h4 class="title mb-4"><span class="text-primary">Alumni Registration</span></h4>
-                    <p class="text-muted para-desc mx-auto mb-0">Start working with <span
-                            class="text-primary fw-bold">Landrick</span> that can provide everything you need to
-                        generate awareness,
-                        drive traffic, connect.</p>
-                </div>
-            </div>
-            <!--end col-->
-        </div>
-    </div>
-</section>
+<form [formGroup]="validationForm">
+    <section class="section mb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title mb-4 pb-2">
+                        <h4 class="title mb-4 text-center"><span class="text-primary text-center">Alumni
+                                Registration</span>
+                        </h4>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="mb-3">
+                                    <label class="form-label">Your Name <span class="text-danger">*</span></label>
+                                    <div class="form-icon position-relative">
+                                        <i-feather name="user" class="fea icon-sm icons"></i-feather>
+                                        <input name="name" id="name" type="text" class="form-control ps-5"
+                                            placeholder="First Name :" formControlName="yourname"
+                                            [ngClass]="{'is-invalid': f.yourname.touched && f.yourname.errors}">
+                                        <div *ngIf="f.yourname.touched && f.yourname.errors" class="invalid-feedback">
+                                            <span *ngIf="f.yourname.errors.required">This Field is
+                                                required.</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!--end col-->
+                            <div class="col-md-12">
+                                <div class="mb-3">
+                                    <label class="form-label">Alumni Name<span class="text-danger">*</span></label>
+                                    <div class="form-icon position-relative">
+                                        <i-feather name="user" class="fea icon-sm icons"></i-feather>
+                                        <input name="Alumni" id="Alumni" type="text" class="form-control ps-5"
+                                            placeholder="Enter Alumni Name : " formControlName="alumni"
+                                            [ngClass]="{'is-invalid': f.alumni.touched && f.alumni.errors}">
+                                        <div *ngIf="f.alumni.touched && f.alumni.errors" class="invalid-feedback">
+                                            <span *ngIf="f.alumni.errors.required">This Field is
+                                                required.</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!--end col-->
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label class="form-label">Subject</label>
+                                        <div class="form-icon position-relative">
+                                            <i-feather name="book" class="fea icon-sm icons"></i-feather>
+                                            <input name="subject" id="subject" class="form-control ps-5"
+                                                placeholder="Your subject :" formControlName="subject"
+                                                [ngClass]="{'is-invalid': f.subject.touched && f.subject.errors}">
+                                            <div *ngIf="f.subject.touched && f.subject.errors" class="invalid-feedback">
+                                                <span *ngIf="f.subject.errors.required">This Field is
+                                                    required.</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div><!--end col-->
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="year">Select a Year :</label>
+                                        <select id="year" class="form-select form-control">
+                                            <option *ngFor="let year of years">{{ year }}</option>
+                                        </select>
+                                    </div>
+                                </div>
 
+                            </div>
+
+                        </div><!--end row-->
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Contact Number<span class="text-danger">*</span></label>
+                                    <div class="form-icon position-relative">
+                                        <i-feather name="phone-call" class="fea icon-sm icons"></i-feather>
+                                        <input name="call" type="call" class="form-control ps-5"
+                                            placeholder="Enter Contact Number:" formControlName="call"
+                                            [ngClass]="{'is-invalid': f.call.touched && f.call.errors}">
+                                            <div *ngIf="f.call.touched && f.call.errors" class="invalid-feedback">
+                                                <span *ngIf="f.call.errors.required">This Field is
+                                                    required.</span>
+                                            </div>
+                                    </div>
+                                </div>
+                            </div><!--end col-->
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Email Address<span class="text-danger">*</span></label>
+                                    <div class="form-icon position-relative">
+                                        <i-feather name="mail" class="fea icon-sm icons"></i-feather>
+                                        <input name="email" id="email" type="email" class="form-control ps-5"
+                                            placeholder="Your email :" formControlName="email"
+                                            [ngClass]="{'is-invalid': f.email.touched && f.email.errors}">
+                                            <div *ngIf="f.email.touched && f.email.errors" class="invalid-feedback">
+                                                <span *ngIf="f.email.errors.required">This Field is
+                                                    required.</span>
+                                            </div>
+                                    </div>
+                                </div>
+                            </div><!--end col-->
+                        </div><!--  -->
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <input type="submit" id="submit" name="send" class="btn btn-primary" value="Submit">
+                            </div><!--end col-->
+                        </div><!--end row-->
+                    </div>
+                </div>
+                <!--end col-->
+            </div>
+        </div>
+    </section>
+</form>
 <div class="position-relative">
     <div class="shape overflow-hidden text-footer">
         <svg viewBox="0 0 2880 250" fill="none" xmlns="http://www.w3.org/2000/svg">
