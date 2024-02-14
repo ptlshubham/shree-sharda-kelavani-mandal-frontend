@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { HomeService } from '../../services/home.services';
 interface form {
   title: string,
   content: string,
@@ -142,11 +143,19 @@ export class IndexComponent implements OnInit {
       comments: 5
     }
   ];
-  constructor() { }
+  public newsData: any = [];
+
+  constructor(
+    private homeService: HomeService
+  ) { }
 
   ngOnInit(): void {
- 
+    this.getNewsDetails();
   }
-
+  getNewsDetails() {
+    this.homeService.getNewsOnlyForCESURL(localStorage.getItem('InstituteId')).subscribe((res: any = []) => {
+      this.newsData = res.slice(0,3);
+    })
+  }
 
 }

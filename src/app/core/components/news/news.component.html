@@ -34,8 +34,15 @@
 <section class="section mb-5">
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="col-lg-12 col-md-12 col-sm-12" *ngIf="newsData.length==0">
                 <div class="card event-schedule event-primary rounded border">
+                    <div class="card-body text-center">
+                        <span class="text-center text-warning">News & Events not available.</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12" *ngIf="newsData.length>0">
+                <div class="card event-schedule event-primary rounded border" *ngFor="let n of newsData">
                     <div class="card-body">
                         <div class="d-flex">
                             <ul class="date text-center me-3 mb-0 list-unstyled">
@@ -44,18 +51,13 @@
                                 </li>
                             </ul>
                             <div class="flex-1 content">
-                                <h5><a href="javascript:void(0)" class="text-dark title">Digital Conference Event
+                                <!-- <h5><a href="javascript:void(0)" class="text-dark title">Digital Conference Event
                                         Intro</a>
-                                </h5>
-                                <p class="text-muted location-time">
-                                    <span class="text-dark">12-02-2024</span><br>
-                                    Using Landrick to build your site means
-                                    never worrying about designing another page or cross browser compatibility. Our
-                                    ever-growing
-                                    library of components and pre-designed layouts will make your life easier.
-                                </p>
-                                <a [ngxScrollTo]="'#tickets'" class="btn btn-soft-primary btn-sm">View <i
-                                        class="mdi mdi-arrow-right"></i></a>
+                                </h5> -->
+                                <span class="text-dark">{{n.date |date}}</span>
+                                <p class="text-muted location-time" [innerHTML]="n.message"></p>
+                                <a href="https://api.cesociety.in{{n.files}}" target="_blank" *ngIf="n.files!='null'"
+                                    class="btn btn-soft-primary btn-sm">View <i class="mdi mdi-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>

@@ -48,6 +48,7 @@ import { NewsComponent } from './core/components/news/news.component';
 import { FacilitiesComponent } from './core/components/facilities/facilities.component';
 import { GalleryComponent } from './core/components/gallery/gallery.component';
 import { AlumniComponent } from './core/components/alumni/alumni.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -78,6 +79,7 @@ import { AlumniComponent } from './core/components/alumni/alumni.component';
     BrowserAnimationsModule,
     AppRoutingModule,
     RouterModule,
+    HttpClientModule,
     CarouselModule,
     FeatherModule.pick(allIcons),
     ScrollToModule.forRoot(),
