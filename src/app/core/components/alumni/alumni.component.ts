@@ -11,39 +11,30 @@ export class AlumniComponent {
   Settingicon = true;
   years: number[] = [];
   validationForm!: FormGroup;
-  yournameModel: any= {};
-  
+  isUpdate: boolean = false;
+  resigtrationmodel: any = {};
+
   constructor(
     public formBuilder: UntypedFormBuilder
-  ) {}
-
-  ngOnInit(): void {
-    this.validationForm = this.formBuilder.group({
-      yourname: ['',[Validators.required]],
-      alumni: ['',[Validators.required]],
-      subject: ['',[Validators.required]],
-      year: ['',[Validators.required]],
-      email: ['',[Validators.required]],
-      call: ['',[Validators.required]],
-    });
+  ) {
     const currentYear = new Date().getFullYear();
-    const startYear =1955;
-    for (let year = startYear; year <= currentYear; year++) {
+    for (let year = currentYear; year >= 1963; year--) {
       this.years.push(year);
     }
   }
 
-  get f() {return this.validationForm.controls;}
-  populateYearDropdown(): void {
-    const select = document.getElementById("yearDropdown") as HTMLSelectElement;
-    const currentYear = new Date().getFullYear();
-    const startYear = 1955;
+  ngOnInit(): void {
+    this.validationForm = this.formBuilder.group({
+      yourname: ['', [Validators.required]],
+      alumni: ['', [Validators.required]],
+      subject: ['', [Validators.required]],
+      year: ['', [Validators.required]],
+      email: ['', [Validators.required]],
+      call: ['', [Validators.required]],
+    });
 
-    for (let i = currentYear; i >= startYear; i--) {
-        const option = document.createElement("option");
-        option.text = i.toString();
-        option.value = i.toString();
-        select.add(option);
-    }
-}
+  }
+
+  get f() { return this.validationForm.controls; }
+
 }
