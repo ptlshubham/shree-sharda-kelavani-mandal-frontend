@@ -17,6 +17,8 @@ import { NewsComponent } from './core/components/news/news.component';
 import { FacilitiesComponent } from './core/components/facilities/facilities.component';
 import { AlumniComponent } from './core/components/alumni/alumni.component';
 import { GalleryComponent } from './core/components/gallery/gallery.component';
+import { BlogDetailsComponent } from './core/components/blog-details/blog-details.component';
+import { TermsOfConditionComponent } from './core/components/terms-of-condition/terms-of-condition.component';
 
 const routes: Routes = [
   {
@@ -31,10 +33,13 @@ const routes: Routes = [
       { path: 'contact-us', component: ContactUsComponent },
       { path: 'privacy-policy', component: PrivacyPolicyComponent },
       { path: 'blog', component: BlogsComponent },
+      { path: 'blog-details/:id', component: BlogDetailsComponent },
       { path: 'news', component: NewsComponent },
       { path: 'facilities', component: FacilitiesComponent },
       { path: 'alumni', component: AlumniComponent },
       { path: 'gallery', component: GalleryComponent },
+      { path: 'terms', component: TermsOfConditionComponent },
+
       
     ]
   },

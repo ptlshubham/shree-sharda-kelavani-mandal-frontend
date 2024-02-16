@@ -1,13 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { HomeService } from '../../services/home.services';
-interface form {
-  title: string,
-  content: string,
-  post: string,
-  topic: number,
-  comments: number,
-};
+
 
 @Component({
   selector: 'app-index',
@@ -59,91 +53,10 @@ export class IndexComponent implements OnInit {
     duration: 2,
     decimalPlaces: 2,
   };
-  blogData = [
-    {
-      image: "assets/images/blog/01.jpg",
-      title: "Design your apps in your own way",
-      like: "33",
-      message: "08",
-      name: "Calvin Carlo",
-      date: "13th August, 2019"
-    },
-    {
-      image: "assets/images/blog/02.jpg",
-      title: "How apps is changing the IT world",
-      like: "33",
-      message: "08",
-      name: "Calvin Carlo",
-      date: "13th August, 2019"
-    },
-    {
-      image: "assets/images/blog/03.jpg",
-      title: "Smartest Applications for Business",
-      like: "33",
-      message: "08",
-      name: "Calvin Carlo",
-      date: "13th August, 2019"
-    }
-  ];
-  formData: form[] = [
-    {
-      title: "Introductions: Landrick",
-      content: "Start working with Landrick that can provide everything you need to generate awareness, drive traffic, connect.",
-      post: "Calvin",
-      topic: 3,
-      comments: 5
-    },
-    {
-      title: "Web Designing and Developing",
-      content: "Start working with Landrick that can provide everything you need to generate awareness, drive traffic, connect.",
-      post: "George",
-      topic: 3,
-      comments: 5
-    },
-    {
-      title: "Hosting and providers",
-      content: "Start working with Landrick that can provide everything you need to generate awareness, drive traffic, connect.",
-      post: "Parthiv",
-      topic: 3,
-      comments: 5
-    },
-    {
-      title: "SEO starter guide",
-      content: "Start working with Landrick that can provide everything you need to generate awareness, drive traffic, connect.",
-      post: "David",
-      topic: 3,
-      comments: 5
-    },
-    {
-      title: "Troubleshooting and managing issues",
-      content: "Start working with Landrick that can provide everything you need to generate awareness, drive traffic, connect.",
-      post: "Tiger",
-      topic: 3,
-      comments: 5
-    },
-    {
-      title: "Backup and restore",
-      content: "Start working with Landrick that can provide everything you need to generate awareness, drive traffic, connect.",
-      post: "Cristina",
-      topic: 3,
-      comments: 5
-    },
-    {
-      title: "Errors and how to fix them",
-      content: "Start working with Landrick that can provide everything you need to generate awareness, drive traffic, connect.",
-      post: "Miriam",
-      topic: 3,
-      comments: 5
-    },
-    {
-      title: "Template features & Services",
-      content: "Start working with Landrick that can provide everything you need to generate awareness, drive traffic, connect.",
-      post: "Janalia",
-      topic: 3,
-      comments: 5
-    }
-  ];
+
   public newsData: any = [];
+  imagesData: any = [];
+  sliderImages: any = [];
 
   constructor(
     private homeService: HomeService
@@ -151,10 +64,22 @@ export class IndexComponent implements OnInit {
 
   ngOnInit(): void {
     this.getNewsDetails();
+    this.getImagesDataById();
   }
   getNewsDetails() {
     this.homeService.getNewsOnlyForCESURL(localStorage.getItem('InstituteId')).subscribe((res: any = []) => {
       this.newsData = res.slice(0,3);
+    })
+  }
+  getImagesDataById() {
+    this.sliderImages = [];
+    this.homeService.getBannersImagesById(localStorage.getItem('InstituteId')).subscribe((res: any) => {
+      this.imagesData = res;
+      this.imagesData.forEach((element: any) => {
+        if (element.purpose == 'slider') {
+          this.sliderImages.push(element);
+        }
+      });
     })
   }
 

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Lightbox } from 'ngx-lightbox';
+import { HomeService } from '../../services/home.services';
 
 @Component({
   selector: 'app-gallery',
@@ -9,65 +10,80 @@ import { Lightbox } from 'ngx-lightbox';
 export class GalleryComponent {
   Menuoption = 'center';
   Settingicon = true;
-  workList = [
-    {
-      image: 'assets/images/personal/1.jpg',
-      title: 'Iphone mockup',
-      category: 'Branding'
-    },
-    {
-      image: 'assets/images/personal/2.jpg',
-      title: 'Mockup Collection',
-      category: 'Mockup'
-    },
-    {
-      image: 'assets/images/personal/3.jpg',
-      title: 'Abstract images',
-      category: 'Abstract'
-    },
-    {
-      image: 'assets/images/personal/4.jpg',
-      title: 'Yellow bg with Books',
-      category: 'Books'
-    },
-    {
-      image: 'assets/images/personal/5.jpg',
-      title: 'Company V-card',
-      category: 'V-card'
-    },
-    {
-      image: 'assets/images/personal/6.jpg',
-      title: 'Mockup box with paints',
-      category: 'Photography'
-    }
-  ];
+
   private _album = [];
+  imagesData: any = [];
+  galleryImg: any[] = []; // Your gallery images array
 
-  constructor(private _lightbox: Lightbox) {
-    for (let i = 1; i <= 6; i++) {
-      const src = '../../../assets/images/personal/' + i + '.jpg';
-      const caption = 'Image ' + i + ' caption here';
-      const thumb = '../../../assets/images/personal/' + i + '-thumb.jpg';
-      const album = {
-        src: src,
-        caption: caption,
-        thumb: thumb
-      };
+  currentPage: number = 1;
+  itemsPerPage: number = 12;
 
-      this._album.push(album);
-    }
+  constructor(
+    private _lightbox: Lightbox,
+    private homeService: HomeService
+  ) {
   }
 
   ngOnInit(): void {
+    this.getImagesDataById();
+  }
+  getImagesDataById() {
+    this.galleryImg = [];
+    this.homeService.getBannersImagesById(localStorage.getItem('InstituteId')).subscribe((res: any) => {
+      this.imagesData = res;
+      this.imagesData.forEach((element: any) => {
+        if (element.purpose == 'image') {
+          this.galleryImg.push(element);
+        }
+      });
+      this.galleryImg.forEach((element: any) => {
+        const src = 'https://api.cesociety.in' + element.image;
+        const album = {
+          src: src,
+        };
+        this._album.push(album);
+      });
+    })
+  }
+  get totalPages(): number {
+    return Math.ceil(this.galleryImg.length / this.itemsPerPage);
+  }
 
+  get startIndex(): number {
+    return (this.currentPage - 1) * this.itemsPerPage;
+  }
+
+  get endIndex(): number {
+    return Math.min(this.startIndex + this.itemsPerPage - 1, this.galleryImg.length - 1);
+  }
+
+  get paginatedGalleryImg(): any[] {
+    return this.galleryImg.slice(this.startIndex, this.endIndex + 1);
+  }
+
+  get pages(): number[] {
+    return Array(this.totalPages).fill(0).map((x, i) => i + 1);
+  }
+
+  prevPage() {
+    if (this.currentPage > 1) {
+      this.currentPage--;
+    }
+  }
+
+  nextPage() {
+    if (this.currentPage < this.totalPages) {
+      this.currentPage++;
+    }
+  }
+
+  changePage(page: number) {
+    this.currentPage = page;
   }
   open(index: number): void {
-    // open lightbox
     this._lightbox.open(this._album, index);
   }
-
   close(): void {
-    // close lightbox programmatically
     this._lightbox.close();
   }
 }

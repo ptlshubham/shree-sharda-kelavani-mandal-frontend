@@ -1,23 +1,12 @@
 <section class="bg-half-100 d-table w-100" id="home">
   <ngb-carousel [showNavigationArrows]="true" [showNavigationIndicators]="true" [pauseOnHover]="true" [keyboard]="true"
     [wrap]="true" [interval]="4000" [pause]="'hover'" [noWrap]="false" [animation]="'slide'" [pauseOnFocus]="true">
-    <ng-template ngbSlide>
+    <ng-template ngbSlide *ngFor="let c of sliderImages;let i=index">
       <div class="picsum-img-wrapper">
-        <img src="assets/images/banr1.jpg" class="d-block w-100" alt="...">
-      </div>
-    </ng-template>
-    <ng-template ngbSlide>
-      <div class="picsum-img-wrapper">
-        <img src="assets/images/banr2.jpg" class="d-block w-100" alt="...">
-      </div>
-    </ng-template>
-    <ng-template ngbSlide>
-      <div class="picsum-img-wrapper">
-        <img src="assets/images/banr3.jpg" class="d-block w-100" alt="...">
+        <img src="https://api.cesociety.in{{c.image}}" class="d-block w-100" alt="...">
       </div>
     </ng-template>
   </ngb-carousel>
-  <!--end container-->
 </section>
 
 <div class="container">
@@ -70,8 +59,9 @@
       <div class="col-lg-3 col-md-4 col-12 mt-4 pt-2">
         <div class="card features feature-primary explore-feature border-0 rounded text-center">
           <div class="card-body py-5">
-            <div class="icons rounded-circle shadow-lg d-inline-block">
-              <i-feather name="pen-tool" class="fea"></i-feather>
+            <div class="position-relative">
+              <img src="assets/images/icon/preschool.png" class="img-fluid avatar avatar-ex-large rounded-circle shadow"
+                alt="preschool">
             </div>
             <div class="content mt-3">
               <h5><a href="javascript:void(0)" class="title text-dark">Pre-School</a></h5>
@@ -83,8 +73,9 @@
       <div class="col-lg-3 col-md-4 col-12 mt-4 pt-2">
         <div class="card features feature-primary explore-feature border-0 rounded text-center">
           <div class="card-body py-5">
-            <div class="icons rounded-circle shadow-lg d-inline-block">
-              <i-feather name="feather" class="fea"></i-feather>
+            <div class="position-relative">
+              <img src="assets/images/icon/primary.png" class="img-fluid avatar avatar-ex-large rounded-circle shadow"
+                alt="primary">
             </div>
             <div class="content mt-3">
               <h5><a href="javascript:void(0)" class="title text-dark">Primary School</a></h5>
@@ -96,8 +87,9 @@
       <div class="col-lg-3 col-md-4 col-12 mt-4 pt-2">
         <div class="card features feature-primary explore-feature border-0 rounded text-center">
           <div class="card-body py-5">
-            <div class="icons rounded-circle shadow-lg d-inline-block">
-              <i-feather name="music" class="fea"></i-feather>
+            <div class="position-relative">
+              <img src="assets/images/icon/secondary.png" class="img-fluid avatar avatar-ex-large rounded-circle shadow"
+                alt="secondary">
             </div>
             <div class="content mt-3">
               <h5><a href="javascript:void(0)" class="title text-dark">Secondary School</a></h5>
@@ -109,8 +101,9 @@
       <div class="col-lg-3 col-md-4 col-12 mt-4 pt-2">
         <div class="card features feature-primary explore-feature border-0 rounded text-center">
           <div class="card-body py-5">
-            <div class="icons rounded-circle shadow-lg d-inline-block">
-              <i-feather name="camera" class="fea"></i-feather>
+            <div class="position-relative">
+              <img src="assets/images/icon/highschool.png" class="img-fluid avatar avatar-ex-large rounded-circle shadow"
+                alt="secondary">
             </div>
             <div class="content mt-3">
               <h5><a href="javascript:void(0)" class="title text-dark">Higher Secondary School</a></h5>
@@ -226,7 +219,7 @@
           </div>
         </div>
         <div *ngIf="newsData.length>0">
-          <div class="card event-schedule event-primary rounded border" *ngFor="let n of newsData">
+          <div class="card event-schedule event-primary rounded border mt-2" *ngFor="let n of newsData">
             <div class="card-body">
               <div class="d-flex">
                 <ul class="date text-center me-3 mb-0 list-unstyled">
@@ -300,7 +293,7 @@
 <!-- How It Work End -->
 
 <!-- Testi Start -->
-<section class="section pb-5">
+<section class="section pb-5" *ngIf="newsData.length<=0">
   <div class="container mb-5 pb-5">
     <div class="row justify-content-center">
       <div class="col-12">
@@ -314,7 +307,7 @@
       <!--end col-->
     </div>
     <!--end row-->
-    <app-blog [blogData]="blogData"></app-blog>
+    <app-blog [blogData]="newsData"></app-blog>
     <!--end row-->
   </div>
   <!--end container-->

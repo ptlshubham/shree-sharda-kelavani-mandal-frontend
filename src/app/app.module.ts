@@ -49,6 +49,8 @@ import { FacilitiesComponent } from './core/components/facilities/facilities.com
 import { GalleryComponent } from './core/components/gallery/gallery.component';
 import { AlumniComponent } from './core/components/alumni/alumni.component';
 import { HttpClientModule } from '@angular/common/http';
+import { BlogDetailsComponent } from './core/components/blog-details/blog-details.component';
+import { TermsOfConditionComponent } from './core/components/terms-of-condition/terms-of-condition.component';
 
 
 @NgModule({
@@ -73,6 +75,8 @@ import { HttpClientModule } from '@angular/common/http';
     FacilitiesComponent,
     GalleryComponent,
     AlumniComponent,
+    BlogDetailsComponent,
+    TermsOfConditionComponent,
   ],
   imports: [
     BrowserModule,

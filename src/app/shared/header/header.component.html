@@ -349,8 +349,8 @@
         <li class="has-submenu">
           <a routerLink="javascript:void(0)" (click)="onMenuClick($event)">Academic</a><span class="menu-arrow"></span>
           <ul class="submenu">
-            <li><a routerLink="/academic" class="nav-link-ref">English Medium</a> </li>
             <li><a routerLink="/academic" class="nav-link-ref">Gujrati Medium </a></li>
+            <li><a routerLink="/academic" class="nav-link-ref">English Medium</a></li>
           </ul>
         </li>
         <li><a routerLink="/alumni" class="nav-link-ref">Alumni</a></li>
@@ -387,16 +387,26 @@
   <div class="offcanvas-body p-4">
     <div class="row">
       <div class="col-12">
-
         <div class="card border-0" style="z-index: 1">
           <div class="card-body p-0">
             <div class="row">
+              <div class="col-12 text-center">
+                <div class="text-center">
+                  <h5 class=" mt-1"> <span class="text-primary mt-1">“सा विद्या या विमुक्तये”</span></h5>
+                </div>
+                <p class="answer text-muted mb-0" style="text-align: justify;">इसका अर्थ है, विद्या वही है जो मुक्त करे.
+                  विद्या का मतलब है लोकोपयोगी सारा ज्ञान प्राप्त करना और
+                  मुक्ति से मतलब है इस जीवन में सब तरह की गुलामी से छुटकारा पाना. </p>
+              </div>
+              <hr class="mt-2">
               <div class="col-12">
                 <div class="d-flex">
                   <i class="mdi mdi-phone text-primary me-2 mt-0 sidebar-icons"></i>
                   <div class="flex-1">
                     <h5 class="mt-1"> <span class="text-primary">Contact</span></h5>
-                    <p class="answer text-muted mb-0">9898127888</p>
+                    <a href="tel:+91 98981 27888">
+                      <p class="answer text-muted mb-0">+91 9898127888</p>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -406,7 +416,9 @@
                   <i class="mdi mdi-email text-primary me-2 mt-0 sidebar-icons"></i>
                   <div class="flex-1">
                     <h5 class="mt-1"> <span class="text-primary">Email</span></h5>
-                    <p class="answer text-muted mb-0">info&#64;shardakedavnimandal.ac.in</p>
+                    <a href="mailto:info@shardakedavanimandal.ac.in">
+                      <p class="answer text-muted mb-0">info&#64;shardakedavnimandal.ac.in</p>
+                    </a>
                   </div>
                 </div>
               </div>

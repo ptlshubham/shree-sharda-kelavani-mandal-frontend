@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
+import { HomeService } from 'src/app/core/services/home.services';
 
 @Component({
   selector: 'app-blog',
@@ -6,19 +8,22 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./blog.component.css']
 })
 export class BlogComponent implements OnInit { 
-
-  @Input() blogData: Array<{
-    image: string;
-    title: string;
-    like: string;
-    message: string;
-    name: string;
-    date: string;
-  }>;
-
-  constructor() { }
+  blogsData: any = []
+  constructor(
+    private homeService: HomeService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
+    this.getBlogDetails();
   }
-
+  getBlogDetails() {
+    this.homeService.getBlogsById(localStorage.getItem('InstituteId')).subscribe((res: any) => {
+      this.blogsData = res.slice(0,3);
+      debugger
+    })
+  }
+  continueBlog(id: any) {
+    this.router.navigate(['/blog-details', id]);
+  }
 }
