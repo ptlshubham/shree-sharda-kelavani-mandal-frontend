@@ -27,7 +27,7 @@ export class AlumniComponent {
     this.validationForm = this.formBuilder.group({
       yourname: ['', [Validators.required]],
       alumni: ['', [Validators.required]],
-      subject: ['', [Validators.required]],
+      course: ['', [Validators.required]],
       year: ['', [Validators.required]],
       email: ['', [Validators.required]],
       call: ['', [Validators.required]],

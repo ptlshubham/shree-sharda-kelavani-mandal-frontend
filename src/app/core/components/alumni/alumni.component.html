@@ -62,7 +62,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <div class="sm-3">
+                                        <div class="mb-3">
                                             <label class="form-label">Alumni Name<span
                                                     class="text-danger">*</span></label>
                                             <div class="form-icon position-relative">
@@ -81,16 +81,17 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <div class="sm-3">
-                                            <label class="form-label">Subject</label>
+                                        <div class="mb-3">
+                                            <label class="form-label">Course Title<span
+                                                class="text-danger">*</span></label>
                                             <div class="form-icon position-relative">
                                                 <i-feather name="book" class="fea icon-sm icons"></i-feather>
-                                                <input name="subject" id="subject" class="form-control ps-5"
-                                                    placeholder="Your subject :" formControlName="subject"
-                                                    [ngClass]="{'is-invalid': f.subject.touched && f.subject.errors}">
-                                                <div *ngIf="f.subject.touched && f.subject.errors"
+                                                <input name="course" id="course" class="form-control ps-5"
+                                                    placeholder="Course Title:" formControlName="course"
+                                                    [ngClass]="{'is-invalid': f.course.touched && f.course.errors}">
+                                                <div *ngIf="f.course.touched && f.course.errors"
                                                     class="invalid-feedback">
-                                                    <span *ngIf="f.subject.errors.required">This Field is
+                                                    <span *ngIf="f.course.errors.required">This Field is
                                                         required.</span>
                                                 </div>
                                             </div>
@@ -98,13 +99,21 @@
                                     </div><!--end col-->
                                     <div class="col-md-6">
                                         <div class="mb-3">
-                                            <label for="year">Select a Year:</label>
+                                            <label for="year">Select Alumni Year<span
+                                                    class="text-danger">*</span></label>
                                             <div class="form-icon position-relative">
                                                 <i-feather name="clock" class="fea icon-sm icons"></i-feather>
                                             </div>
-                                            <select id="year" class="form-select form-control px-5">
+                                            <select id="year" class="form-select form-control px-5"
+                                                formControlName="year"
+                                                [ngClass]="{'is-invalid': f.year.touched && f.year.errors}">
+                                                <option value="" hidden>Select Alumni Year</option>
                                                 <option *ngFor="let year of years">{{ year }}</option>
                                             </select>
+                                            <div *ngIf="f.year.touched && f.year.errors" class="invalid-feedback">
+                                                <span *ngIf="f.year.errors.required">This Field is
+                                                    required.</span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
