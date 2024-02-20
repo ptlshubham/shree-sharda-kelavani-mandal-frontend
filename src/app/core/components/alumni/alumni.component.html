@@ -139,6 +139,11 @@
                                                     <span *ngIf="f.call.errors.required">This Field is
                                                         required.</span>
                                                 </div>
+                                                <div *ngIf="f.call.touched && f.call.errors" class="invalid-feedback">
+                                                    <div *ngIf="f.call.errors?.['pattern']">
+                                                        Contact Number not valid
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div><!--end col-->
@@ -155,6 +160,13 @@
                                                 <div *ngIf="f.email.touched && f.email.errors" class="invalid-feedback">
                                                     <!-- <span *ngIf="f.email.errors.required">This Field is
                                                         required.</span> -->
+
+                                                    <div *ngIf="f.email.errors.required">
+                                                        This Field is required
+                                                    </div>
+                                                    <div *ngIf="f.email.errors.email">
+                                                        Invalid email format
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>

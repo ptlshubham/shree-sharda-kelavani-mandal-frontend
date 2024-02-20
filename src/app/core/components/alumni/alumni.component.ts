@@ -14,7 +14,7 @@ export class AlumniComponent {
   years: number[] = [];
   validationForm!: FormGroup;
   isUpdate: boolean = false;
-  resigtrationmodel: any = {};
+  resigtrationmodel: any = [];
   instituteList: any = [];
   alumniModel: any = {};
   submitted = false;
@@ -37,8 +37,8 @@ export class AlumniComponent {
       alumni: ['', [Validators.required]],
       course: ['', [Validators.required]],
       year: ['', [Validators.required]],
-      email: ['', [Validators.required]],
-      call: ['', [Validators.required]],
+      email: ['', [Validators.required, Validators.email]],
+      call: ['', [Validators.required, Validators.pattern(/^[0-9]{10}$/)]],
     });
 
   }
