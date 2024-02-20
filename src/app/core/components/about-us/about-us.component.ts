@@ -8,6 +8,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class AboutUsComponent {
   // Set Topbar Option
+    sliderTopbar = false;
   Menuoption = 'center';
   Settingicon = true;
   

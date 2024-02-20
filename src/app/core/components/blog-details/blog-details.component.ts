@@ -8,6 +8,7 @@ import { HomeService } from '../../services/home.services';
   styleUrl: './blog-details.component.css'
 })
 export class BlogDetailsComponent {
+    sliderTopbar = false;
   Menuoption = 'center';
   Settingicon = true;
   

@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class ManagementComponent {
   // Set Topbar Option
+    sliderTopbar = false;
   Menuoption = 'center';
   Settingicon = true;
   memberData = [

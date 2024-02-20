@@ -11,6 +11,7 @@ interface work {
   styleUrl: './academic.component.css'
 })
 export class AcademicComponent {
+    sliderTopbar = false;
   Menuoption = 'center';
   Settingicon = true;
   worksData: work[] = [

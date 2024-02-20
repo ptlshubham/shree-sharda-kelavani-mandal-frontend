@@ -7,6 +7,7 @@ import { HomeService } from '../../services/home.services';
   styleUrl: './facilities.component.css'
 })
 export class FacilitiesComponent {
+    sliderTopbar = false;
   Menuoption = 'center';
   Settingicon = true;
 

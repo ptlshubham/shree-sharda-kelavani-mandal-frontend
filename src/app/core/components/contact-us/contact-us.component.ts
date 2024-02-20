@@ -7,6 +7,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
   styleUrl: './contact-us.component.css'
 })
 export class ContactUsComponent {
+    sliderTopbar = false;
   Menuoption = 'center';
   Settingicon = true;
   

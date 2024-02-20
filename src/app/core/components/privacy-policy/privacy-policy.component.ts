@@ -7,8 +7,9 @@ import { Component } from '@angular/core';
 })
 export class PrivacyPolicyComponent {
  // Set Topbar Option
- Menuoption = 'center';
- Settingicon = true
+  sliderTopbar = false;
+  Menuoption = 'center';
+  Settingicon = true;
  constructor() { }
 
  ngOnInit(): void {

@@ -7,6 +7,7 @@ import { HomeService } from '../../services/home.services';
   styleUrl: './news.component.css'
 })
 export class NewsComponent {
+    sliderTopbar = false;
   Menuoption = 'center';
   Settingicon = true;
 

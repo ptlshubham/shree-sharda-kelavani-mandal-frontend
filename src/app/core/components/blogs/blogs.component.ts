@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
   styleUrl: './blogs.component.css'
 })
 export class BlogsComponent {
+    sliderTopbar = false;
   Menuoption = 'center';
   Settingicon = true;
   blogsData: any = []

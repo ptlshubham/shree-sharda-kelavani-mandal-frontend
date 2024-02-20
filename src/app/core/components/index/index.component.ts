@@ -15,6 +15,7 @@ import { HomeService } from '../../services/home.services';
 export class IndexComponent implements OnInit {
 
   // Set Topbar Option
+    sliderTopbar = false;
   Menuoption = 'center';
   Settingicon = true;
 

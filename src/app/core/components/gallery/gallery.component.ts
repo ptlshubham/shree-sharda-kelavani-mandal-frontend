@@ -8,6 +8,7 @@ import { HomeService } from '../../services/home.services';
   styleUrl: './gallery.component.css'
 })
 export class GalleryComponent {
+    sliderTopbar = false;
   Menuoption = 'center';
   Settingicon = true;
 
@@ -37,7 +38,7 @@ export class GalleryComponent {
         }
       });
       this.galleryImg.forEach((element: any) => {
-        const src = 'https://api.cesociety.in' + element.image;
+        const src = 'http://localhost:9200' + element.image;
         const album = {
           src: src,
         };

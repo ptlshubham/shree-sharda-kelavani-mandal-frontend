@@ -1,6 +1,6 @@
 <!-- TAGLINE START-->
 @if(sliderTopbar == true){
-<div class="tagline bg-light">
+<div class="tagline bg-dark">
   <div class="container-fluid">
     <div class="row">
       <div class="col-12">
@@ -62,126 +62,6 @@
           <!-- End mobile menu toggle-->
         </div>
       </div>
-      @if(shopPages == true){
-      <ul class="buy-button list-inline mb-0">
-        <li class="list-inline-item mb-0 pe-1">
-          <div class="dropdown" ngbDropdown>
-            <button type="button" class="btn dropdown-toggle p-0" ngbDropdownToggle data-bs-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false">
-              <i class="uil uil-search text-dark fs-5 align-middle"></i>
-            </button>
-            <div class="dropdown-menu dd-menu dropdown-menu-end bg-white shadow rounded border-0 mt-3 py-0"
-              style="width: 300px;" ngbDropdownMenu>
-              <!-- <div class="search-bar">
-                <div id="itemSearch" class="menu-search mb-0"> -->
-              <form class="searchform">
-                <input type="text" id="text" name="name" class="form-control border rounded" placeholder="Search...">
-                <input type="submit" id="searchItemsubmit" value="Search">
-              </form>
-              <!-- </div>
-              </div> -->
-            </div>
-          </div>
-        </li>
-        <li class="list-inline-item mb-0 pe-1">
-          <div class="dropdown" ngbDropdown>
-            <button type="button" class="btn btn-icon btn-pills btn-primary dropdown-toggle" ngbDropdownToggle
-              data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i
-                class="uil uil-shopping-cart align-middle icons"></i></button>
-            <div class="dropdown-menu dd-menu dropdown-menu-end bg-white shadow rounded border-0 mt-3 p-4"
-              ngbDropdownMenu style="width: 300px;">
-              <div class="pb-4">
-                <a href="javascript:void(0)" class="d-flex align-items-center">
-                  <img src="assets/images/shop/product/s-1.jpg" class="shadow rounded" style="max-height: 64px;" alt="">
-                  <div class="flex-1 text-start ms-3">
-                    <h6 class="text-dark mb-0">T-shirt (M)</h6>
-                    <p class="text-muted mb-0">$320 X 2</p>
-                  </div>
-                  <h6 class="text-dark mb-0">$640</h6>
-                </a>
-
-                <a href="javascript:void(0)" class="d-flex align-items-center mt-4">
-                  <img src="assets/images/shop/product/s-2.jpg" class="shadow rounded" style="max-height: 64px;" alt="">
-                  <div class="flex-1 text-start ms-3">
-                    <h6 class="text-dark mb-0">Bag</h6>
-                    <p class="text-muted mb-0">$50 X 5</p>
-                  </div>
-                  <h6 class="text-dark mb-0">$250</h6>
-                </a>
-
-                <a href="javascript:void(0)" class="d-flex align-items-center mt-4">
-                  <img src="assets/images/shop/product/s-3.jpg" class="shadow rounded" style="max-height: 64px;" alt="">
-                  <div class="flex-1 text-start ms-3">
-                    <h6 class="text-dark mb-0">Watch (Men)</h6>
-                    <p class="text-muted mb-0">$800 X 1</p>
-                  </div>
-                  <h6 class="text-dark mb-0">$800</h6>
-                </a>
-              </div>
-
-              <div class="d-flex align-items-center justify-content-between pt-4 border-top">
-                <h6 class="text-dark mb-0">Total($):</h6>
-                <h6 class="text-dark mb-0">$1690</h6>
-              </div>
-
-              <div class="mt-3 text-center">
-                <a href="javascript:void(0)" class="btn btn-primary me-2">View Cart</a>
-                <a href="javascript:void(0)" class="btn btn-primary">Checkout</a>
-              </div>
-              <p class="text-muted text-start mt-1 mb-0">*T&amp;C Apply</p>
-            </div>
-          </div>
-        </li>
-        <li class="list-inline-item mb-0 pe-1">
-          <a href="javascript:void(0);" class="btn btn-icon btn-pills btn-primary" (click)="wishListModal(content)"><i
-              class="uil uil-heart align-middle icons"></i></a>
-        </li>
-
-        <ng-template #content>
-          <div class="modal-content rounded shadow-lg border-0 overflow-hidden">
-            <div class="modal-body py-5">
-              <div class="text-center">
-                <div class="icon d-flex align-items-center justify-content-center bg-soft-danger rounded-circle mx-auto"
-                  style="height: 95px; width:95px;">
-                  <h1 class="mb-0"><i class="uil uil-heart-break align-middle"></i></h1>
-                </div>
-                <div class="mt-4">
-                  <h4>Your wishlist is empty.</h4>
-                  <p class="text-muted">Create your first wishlist request...</p>
-                  <div class="mt-4">
-                    <a href="javascript:void(0)" class="btn btn-outline-primary">+ Create new wishlist</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </ng-template>
-
-        <li class="list-inline-item mb-0">
-          <div class="dropdown dropdown-primary" ngbDropdown>
-            <button type="button" class="btn btn-icon btn-pills btn-primary dropdown-toggle" ngbDropdownToggle
-              data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i
-                class="uil uil-user align-middle icons"></i></button>
-            <div class="dropdown-menu dd-menu dropdown-menu-end bg-white shadow rounded border-0 mt-3 py-3"
-              ngbDropdownMenu style="width: 200px;">
-              <a class="dropdown-item text-dark" href="javascript:void(0)"><i
-                  class="uil uil-user align-middle me-1"></i> Account</a>
-              <a class="dropdown-item text-dark" href="javascript:void(0)"><i
-                  class="uil uil-clipboard-notes align-middle me-1"></i>
-                Order History</a>
-              <a class="dropdown-item text-dark" href="javascript:void(0)"><i
-                  class="uil uil-arrow-circle-down align-middle me-1"></i>
-                Download</a>
-              <div class="dropdown-divider my-3 border-top"></div>
-              <a class="dropdown-item text-dark" href="javascript:void(0)"><i
-                  class="uil uil-sign-out-alt align-middle me-1"></i>
-                Logout</a>
-            </div>
-          </div>
-        </li>
-      </ul>
-      }
-
       @if(buttonList == true){
       <ul class="buy-button list-inline mb-0">
         <li class="list-inline-item mb-0 ms-1">
@@ -285,55 +165,6 @@
     </ul>
     }
 
-    @if(appicons == true){
-    <ul class="buy-button list-inline mb-0 app-header">
-      <li class="list-inline-item mb-0">
-        <a href="javascript:void(0)" class="btn btn-icon btn-light">
-          <img src="assets/images/app/app-store.png" class="avatar avatar-ex-small p-1" alt="">
-        </a>
-      </li>
-
-      <li class="list-inline-item mb-0 ps-2">
-        <a href="javascript:void(0)" class="btn btn-icon btn-light">
-          <img src="assets/images/app/play-store.png" class="avatar avatar-ex-small p-1" alt="">
-        </a>
-      </li>
-    </ul>
-    }
-
-
-    @if(Nfticons == true){
-    <ul class="buy-button list-inline mb-0">
-      <li class="list-inline-item mb-0">
-        <div class="dropdown">
-          <button type="button" class="btn dropdown-toggle p-0" data-bs-toggle="dropdown" aria-haspopup="true"
-            aria-expanded="false">
-            <!-- <i class="uil uil-search text-white title-dark btn-icon-light fs-5 align-middle"></i>
-                  <i class="uil uil-search text-dark btn-icon-dark fs-5 align-middle"></i> -->
-            <i class="uil uil-search text-dark fs-5 align-middle"></i>
-          </button>
-          <div class="dropdown-menu dd-menu dropdown-menu-end bg-white shadow rounded border-0 mt-3 p-0"
-            style="width: 300px;">
-            <div class="search-bar">
-              <div id="itemSearch" class="menu-search mb-0">
-                <form role="search" method="get" id="searchItemform" class="searchform">
-                  <input type="text" class="form-control border rounded" name="s" id="searchItem"
-                    placeholder="Search...">
-                  <input type="submit" id="searchItemsubmit" value="Search">
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </li>
-
-      <li class="list-inline-item ps-1 mb-0">
-        <a href="https://1.envato.market/landrick" target="_blank" class="btn btn-icon btn-pills btn-primary"><i
-            class="uil uil-wallet"></i></a>
-      </li>
-    </ul><!--end login button-->
-    }
-
     @if(Menuoption == 'center'){
     <div id="navigation">
       <!-- Navigation Menu-->
@@ -371,8 +202,6 @@
   </div>
   <!--end container-->
 </header>
-<!--end header-->
-<!-- Navbar End -->
 
 <!-- Offcanvas Start -->
 <ng-template #content let-offcanvas>

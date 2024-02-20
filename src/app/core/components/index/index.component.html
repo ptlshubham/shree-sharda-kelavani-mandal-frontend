@@ -3,7 +3,7 @@
     [wrap]="true" [interval]="4000" [pause]="'hover'" [noWrap]="false" [animation]="'slide'" [pauseOnFocus]="true">
     <ng-template ngbSlide *ngFor="let c of sliderImages;let i=index">
       <div class="picsum-img-wrapper">
-        <img src="https://api.cesociety.in{{c.image}}" class="d-block w-100" alt="...">
+        <img src="http://localhost:9200{{c.image}}" class="d-block w-100" alt="...">
       </div>
     </ng-template>
   </ngb-carousel>
@@ -102,8 +102,8 @@
         <div class="card features feature-primary explore-feature border-0 rounded text-center">
           <div class="card-body py-5">
             <div class="position-relative">
-              <img src="assets/images/icon/highschool.png" class="img-fluid avatar avatar-ex-large rounded-circle shadow"
-                alt="secondary">
+              <img src="assets/images/icon/highschool.png"
+                class="img-fluid avatar avatar-ex-large rounded-circle shadow" alt="secondary">
             </div>
             <div class="content mt-3">
               <h5><a href="javascript:void(0)" class="title text-dark">Higher Secondary School</a></h5>
@@ -233,10 +233,17 @@
                     </h5> -->
                   <span class="text-dark">{{n.date |date}}</span>
                   <p class="text-muted location-time" [innerHTML]="n.message"></p>
-                  <a href="https://api.cesociety.in{{n.files}}" target="_blank" *ngIf="n.files!='null'"
+                  <a href="http://localhost:9200{{n.files}}" target="_blank" *ngIf="n.files!='null'"
                     class="btn btn-soft-primary btn-sm">View <i class="mdi mdi-arrow-right"></i></a>
                 </div>
               </div>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="text-center mt-2">
+              <a routerLink="/news" class="btn btn-primary">See More
+                <i-feather name="chevron-right" class="fea icon-sm"></i-feather>
+              </a>
             </div>
           </div>
         </div>

@@ -44,16 +44,21 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="mb-3">
-                                            <label class="form-label">Your Name <span
+                                            <label class="form-label">Institute List<span
                                                     class="text-danger">*</span></label>
                                             <div class="form-icon position-relative">
-                                                <i-feather name="user" class="fea icon-sm icons"></i-feather>
-                                                <input name="name" id="name" type="text" class="form-control ps-5"
-                                                    placeholder="First Name :" formControlName="yourname"
-                                                    [ngClass]="{'is-invalid': f.yourname.touched && f.yourname.errors}">
-                                                <div *ngIf="f.yourname.touched && f.yourname.errors"
+                                                <i-feather name="edit-2" class="fea icon-sm icons"></i-feather>
+                                                <select class="form-select form-control px-5" id="institute"
+                                                    formControlName="institute" [(ngModel)]="alumniModel.instituteName"
+                                                    [ngClass]="{'is-invalid': f.institute.touched && f.institute.errors}">
+                                                    <option value="" hidden>Select Institute Name</option>
+                                                    <option *ngFor="let c of instituteList">
+                                                        {{c.name}}
+                                                    </option>
+                                                </select>
+                                                <div *ngIf="f.institute.touched && f.institute.errors"
                                                     class="invalid-feedback">
-                                                    <span *ngIf="f.yourname.errors.required">This Field is
+                                                    <span *ngIf="f.institute.errors.required">This Field is
                                                         required.</span>
                                                 </div>
                                             </div>
@@ -68,7 +73,8 @@
                                             <div class="form-icon position-relative">
                                                 <i-feather name="user" class="fea icon-sm icons"></i-feather>
                                                 <input name="Alumni" id="Alumni" type="text" class="form-control ps-5"
-                                                    placeholder="Enter Alumni Name : " formControlName="alumni"
+                                                    placeholder="Enter Alumni Name" formControlName="alumni"
+                                                    [(ngModel)]="alumniModel.alumniName"
                                                     [ngClass]="{'is-invalid': f.alumni.touched && f.alumni.errors}">
                                                 <div *ngIf="f.alumni.touched && f.alumni.errors"
                                                     class="invalid-feedback">
@@ -83,11 +89,12 @@
                                     <div class="col-md-6">
                                         <div class="mb-3">
                                             <label class="form-label">Course Title<span
-                                                class="text-danger">*</span></label>
+                                                    class="text-danger">*</span></label>
                                             <div class="form-icon position-relative">
                                                 <i-feather name="book" class="fea icon-sm icons"></i-feather>
                                                 <input name="course" id="course" class="form-control ps-5"
-                                                    placeholder="Course Title:" formControlName="course"
+                                                    placeholder="Course Title" formControlName="course"
+                                                    [(ngModel)]="alumniModel.alumniCourse"
                                                     [ngClass]="{'is-invalid': f.course.touched && f.course.errors}">
                                                 <div *ngIf="f.course.touched && f.course.errors"
                                                     class="invalid-feedback">
@@ -105,7 +112,7 @@
                                                 <i-feather name="clock" class="fea icon-sm icons"></i-feather>
                                             </div>
                                             <select id="year" class="form-select form-control px-5"
-                                                formControlName="year"
+                                                formControlName="year" [(ngModel)]="alumniModel.alumniYear"
                                                 [ngClass]="{'is-invalid': f.year.touched && f.year.errors}">
                                                 <option value="" hidden>Select Alumni Year</option>
                                                 <option *ngFor="let year of years">{{ year }}</option>
@@ -125,7 +132,8 @@
                                             <div class="form-icon position-relative">
                                                 <i-feather name="phone-call" class="fea icon-sm icons"></i-feather>
                                                 <input name="call" type="call" class="form-control ps-5"
-                                                    placeholder="Enter Contact Number:" formControlName="call"
+                                                    placeholder="Enter Contact Number" formControlName="call"
+                                                    [(ngModel)]="alumniModel.contactNumber"
                                                     [ngClass]="{'is-invalid': f.call.touched && f.call.errors}">
                                                 <div *ngIf="f.call.touched && f.call.errors" class="invalid-feedback">
                                                     <span *ngIf="f.call.errors.required">This Field is
@@ -141,7 +149,8 @@
                                             <div class="form-icon position-relative">
                                                 <i-feather name="mail" class="fea icon-sm icons"></i-feather>
                                                 <input name="email" id="email" type="email" class="form-control ps-5"
-                                                    placeholder="Your email :" formControlName="email"
+                                                    placeholder="Your email" formControlName="email"
+                                                    [(ngModel)]="alumniModel.email"
                                                     [ngClass]="{'is-invalid': f.email.touched && f.email.errors}">
                                                 <div *ngIf="f.email.touched && f.email.errors" class="invalid-feedback">
                                                     <!-- <span *ngIf="f.email.errors.required">This Field is
@@ -152,7 +161,7 @@
                                     </div><!--end col-->
                                 </div><!--  -->
                                 <div class="col-lg-1 col-xl-1 col-md-1 col-sm-2 col-xs-12 mt-3">
-                                    <button type="submit" class="btn btn-primary" (click)="saveExpensesDetail()"
+                                    <button type="submit" class="btn btn-primary" (click)="saveAlumniData()"
                                         *ngIf="isUpdate==false" [disabled]="validationForm.invalid">Submit</button>
                                 </div>
                             </form>
